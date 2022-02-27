@@ -1,0 +1,17 @@
+<div class="card text-center" >
+  <div class="card-header" style="text-align:center;">Connectez-vous !</div>
+  <div class="card-body" style="text-align:center;">
+      {% if form.errors %}
+{{ form.errors }}
+{% endif %}
+    <form method="post">
+
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary" >Se connecter</button>
+
+
+</form>
+  </div>
+  <div class="card-footer text-muted" style="text-align:center;"><a href="{% url 'signup' %}"><button type="submit" class="btn btn-primary">S'inscrire</button></a></div>
+</div>

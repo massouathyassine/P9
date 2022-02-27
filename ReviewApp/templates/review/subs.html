@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="connexion_page">
+<div class="card text-center" style="width: 50%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Suivre d'autres utilisateurs</div>
+  <div class="card-body" >
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+  <div class="search">
+    <form method="post" action="{% url 'subs' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Nom d'utilisateur">
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+<div class="connexion_page">
+<div class="card text-center" style="width: 50%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Abonnements</div>
+  <div class="card-body" >
+    {% if followed %}
+    {% for sub in followed %}
+    <div class="follow">
+        <p class="user">{{ sub.followed_user }}</p>
+        <p><a href="{% url 'delete_sub' sub.id %}"><button class="btn btn-primary">Désabonner</button></a></p>
+    </div>
+    {% endfor %}
+{% else %}
+    <div>
+        <p class="no_follow">Vous ne suivez personne pour l'instant !</p>
+    </div>
+{% endif %}
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+
+<div class="connexion_page">
+<div class="card text-center" style="width: 50%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Abonnées</div>
+  <div class="card-body" >
+    {% if following %}
+    {% for sub in following %}
+        <div class="follow">
+            <p class="user">{{ sub.user }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <div class="no_follow">
+            <p>Personne de vous suit pour l'instant !</p>
+        </div>
+{% endif %}
+{% endblock %}
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+

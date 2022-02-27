@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="connexion_page">
+<div class="card text-center" style="width: 50%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Vous êtes en train de poster une réponse à :</div>
+  <div class="card-body" >
+      <div class="ticket_inside">
+    {% include 'review/element/base_ticket.html' with ticket=ticket %}
+</div>
+<form method="post" enctype="multipart/form-data">
+    <div style="text-align:center;">{{ review_form.as_p }}</div>
+    {% csrf_token %}
+  <div style="text-align:right;">  <button type="submit" class="btn btn-primary">Envoyer</button></div>
+</form>
+  </div>
+</div>
+</div>
+{% endblock %}

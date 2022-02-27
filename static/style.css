@@ -1,0 +1,170 @@
+html {
+  background-color: #EEE;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.content {
+  height: 90%;
+  overflow: scroll;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  height: 10%;
+  border-bottom-color: black;
+  border-bottom: solid 2px;
+}
+.nav__title {
+  right: 50%;
+  margin-left: 45%;
+}
+.nav__list li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.connexion_page {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.log_snip form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.log_snip h2 {
+  text-align: right;
+}
+
+.sign_snip {
+  text-align: center;
+}
+
+.signup_page {
+  width: 58%;
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
+}
+.signup_page span {
+  display: none;
+}
+.signup_page ul {
+  text-align: left;
+}
+
+.ticket {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.review {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.ticket_inside {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 95%;
+}
+
+.follow {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: center;
+}
+.follow p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.no_follow {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  border: solid 1px;
+}
+
+.search {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+.search form {
+  display: flex;
+  justify-content: space-between;
+}
+.search form input {
+  width: 90%;
+}
+
+#id_rating li {
+  display: inline;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+.edit {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.ticket_response {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.ticket_head {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.ticket_title {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.review_head {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.content_ticket {
+  justify-content: left;
+  margin: 0 10px;
+}
+
+.rating {
+  margin: 0 10px;
+}
+
+.review_body {
+  margin-left: 10px;
+}
+
+
+/*# sourceMappingURL=style.css.map */

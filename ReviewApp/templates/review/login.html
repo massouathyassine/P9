@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="connexion_page">
+    <div class="card text-center" >
+  <div class="card-header" style="text-align:center;">Connectez-vous !</div>
+  <div class="card-body" >
+      {% if form.errors %}
+        {{ form.errors }}
+      {% endif %}
+    <form method="post">
+
+        <div style="text-align:right;">{{ form.as_p }}</div>
+        {% csrf_token %}
+        <div style="text-align:right;">
+            <button type="submit" class="btn btn-primary" >Se connecter</button>
+        </div>
+
+
+
+    </form>
+</div>
+    <div class="card-footer text-muted"><div style="text-align:center;"><a href="{% url 'signup' %}" ><button type="submit" class="btn btn-success">Créer un compte</button></a></div></div>
+</div>
+</div>
+{% endblock %}

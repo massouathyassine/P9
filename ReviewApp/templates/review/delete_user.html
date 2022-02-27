@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="connexion_page">
+    <div class="card">
+  <div class="card-body">
+    <p class="card-text">Vous etes sur le point de supprimer votre compte, êtes vous sur de votre choix ?</p>
+    <a href="{% url 'delete_account_confirm' %}"><button class="btn btn-primary">Oui</button></a>
+    <a href="{% url 'home' %}"><button class="btn btn-primary">Non</button></a>
+  </div>
+</div>
+</div>
+{% endblock %}

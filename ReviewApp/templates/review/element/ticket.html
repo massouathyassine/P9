@@ -1,0 +1,24 @@
+
+<div class="card">
+  <h5 class="card-header">
+      <div class="ticket_head">
+    {% if user == ticket.user %}
+        <p>Vous avez demandé une critique </p>
+{% else %}
+        <p>{{ ticket.user }} a demandé une critique</p>
+{% endif %}
+        <p>le {{ ticket.time_created }}</p>
+</div>
+  </h5>
+  <div class="card-body">
+   {% include 'review/element/base_ticket.html' %}
+  {% if own_post %}
+    {% if user == ticket.user %}
+        <div class="edit">
+            <a href="{% url 'edit_ticket' ticket.id %}"><button type="submit" class="btn btn-primary">Modifier</button></a>
+            <a href="{% url 'delete_ticket' ticket.id %}"><button type="submit" class="btn btn-danger">Supprimer</button></a>
+        </div>
+    {% endif %}
+{% endif %}
+  </div>
+</div>

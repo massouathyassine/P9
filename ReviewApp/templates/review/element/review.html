@@ -1,0 +1,39 @@
+{% load extras %}
+{% load static %}
+<div class="card">
+  <h5 class="card-header">
+  <div class="ticket_head">
+      {% if user == review.user %}
+    <p>Vous avez publié une critique</p>
+{% else %}
+    <p>{{ review.user}} a publié une critique</p>
+{% endif %}
+      <p>Le {{ review.time_created }}</p>
+  </div>
+  </h5>
+
+  <div class="card-body">
+      <h5 class="card-title"><div class="rating">
+    <p style="color:#F93154"><strong>{{ review.headline }}</strong> -
+        {% for i in review.range_rating %}
+            <img alt="star" src="{% static 'star.png' %}">
+        {% endfor %}
+    </p>
+</div>
+      <p style="font-size: 14px;">{{ review.body }}</p>
+</h5>
+
+    <div class="ticket_inside">
+    {% include 'review/element/inside_ticket.html' with  ticket=review.ticket%}
+</div>
+  {% if own_post %}
+    {% if user == review.user %}
+        <div class="edit">
+            <a href="{% url 'edit_review' review.id %}" ><button type="submit" class="btn btn-primary">Modifier</button></a>
+            <a href="{% url 'delete_review' review.id %}" ><button type="submit" class="btn btn-danger">Supprimer</button></a>
+        </div>
+    {% endif %}
+{% endif %}
+
+  </div>
+</div>

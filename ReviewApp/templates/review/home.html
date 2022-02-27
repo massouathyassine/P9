@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% load extras %}
+{% block content %}
+
+<div class="connexion_page">
+
+<div class="card text-center" style="width: 80%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Fil des postes</div>
+  <div class="card-body" >
+
+<div style="text-align:center;">
+  <a href="{% url 'create_ticket' %}"><button class="btn btn-primary" type="button">Demander une critique</button></a>
+  <a href="{% url 'create_review' %}"><button class="btn btn-primary" type="button">Créer une critique</button></a>
+</div>
+
+{% for instance in instances %}
+    {% if instance|model_type == 'Ticket' %}
+        <div class="ticket">
+            {% include 'review/element/ticket.html' with ticket=instance %}
+        </div>
+    {% endif %}
+    {% if instance|model_type == 'Review' %}
+        <div class="review">
+            {% include 'review/element/review.html' with review=instance %}
+        </div>
+    {% endif %}
+{% endfor %}
+  <div style="text-align:center;">
+{% include 'review/element/pagination.html' %}
+  </div>
+
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="connexion_page">
+<div class="card text-center" style="width: 50%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Inscrivez-vous !</div>
+  <div class="card-body" >
+     <form method="post">
+        {{ form.as_p}}
+        {% csrf_token %}
+        <div style="text-align:right;">
+            <button type="submit" class="btn btn-primary" >S’inscrire</button>
+        </div>
+     </form>
+
+  </div>
+</div>
+</div>
+{% endblock %}

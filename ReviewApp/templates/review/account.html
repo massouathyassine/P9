@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="connexion_page">
+<div class="card text-center" style="width: 50%; height:100%;text-align:center;">
+  <div class="card-header" style="text-align:center;">Gestion de votre compte</div>
+  <div class="card-body" >
+      <h5 class="card-title">Bienvenu {{ user.username }}</h5>
+    <a href="{% url 'password_change' %}" class="card-link">Modifier votre mot de passe</a>
+      <br>
+    <a href="{% url 'delete_account' %}">Supprimer votre compte</a>
+</div>
+</div>
+  </div>
+</div>
+</div>
+{% endblock %}
