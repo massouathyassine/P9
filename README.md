@@ -22,5 +22,5 @@
 5) lancer le server local :
 - dans le terminal tapez : ```python3 manage.py runserver```
 - Une fois le serveur lancé, vous pourrez accéder au site à l'adresse indiquée dans le terminal ( par defaut : http://127.0.0.1:8000/ )
-
-
+- 
+5) Créer un Compte : http://127.0.0.1:8000/signup/
