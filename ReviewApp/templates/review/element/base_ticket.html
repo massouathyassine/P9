@@ -5,15 +5,16 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-      {% if not ticket.reviewed and not response %}
-        <div class="ticket_response">
-            <a href="{% url 'ticket_response' ticket.id %}" class="button"><button class="btn btn-primary">Créer une critique</button></a>
-        </div>
-            {% endif %}
+      
         <h5 class="card-title">{{ ticket.title }}</h5>
         <p class="card-text">
           {{ ticket.description }}
         </p>
+        {% if not ticket.reviewed and not response %}
+        <div class="ticket_response">
+            <a href="{% url 'ticket_response' ticket.id %}" class="button"><button class="btn btn-primary">Créer une critique</button></a>
+        </div>
+            {% endif %}
       </div>
     </div>
   </div>
